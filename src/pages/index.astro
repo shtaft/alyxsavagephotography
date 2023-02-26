@@ -1,0 +1,93 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const sections = [
+  {
+    img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    header: "Product Shots",
+    content: "Ecommerce",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    header: "Styled Photography",
+    content: "Product in content",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    header: "Model Photography",
+    content: "",
+  },
+  {
+    img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
+    header: "Couple Photography",
+    content: "Weddings, engagements, anniversaries",
+  },
+];
+---
+
+<Layout title="Alyx Savage | Victoria & Vancouver Island Photography">
+  <main>
+    <div
+      class="flex flex-col justify-center items-center h-screen uppercase tracking-widest bg-beige"
+    >
+      <div
+        class="max-w-md flex flex-col justify-center items-center text-center"
+      >
+        <h1 class="text-5xl md:text-6xl lg:text-8xl text-charcoal">
+          Alyx Savage Photography
+        </h1>
+      </div>
+      <a
+        href="/contact"
+        class="bg-charcoal rounded-lg my-36 px-24 py-6 text-[#fafafa] uppercase transition-colors duration-500 hover:bg-[#fafafa] hover:text-charcoal border border-charcoal"
+      >
+        Get In Touch</a
+      >
+    </div>
+
+    <div>
+      {
+        sections.map((s) => (
+          <div class="grid grid-cols-1 md:grid-cols-2 h-screen md:h-fit">
+            <img class="" src={s.img} />
+            <div class="flex flex-col justify-center items-center my-12 md:my-0">
+              <h2 class="text-center text-4xl lg:text-5xl 2xl:text-6xl text-charcoal">
+                {s.header}
+              </h2>
+              <p class="text-charcoal py-6">{s.content}</p>
+              <a
+                href="/contact"
+                class="bg-charcoal tracking-widest rounded-lg my-6 px-12 py-6 text-[#fafafa] uppercase transition-colors duration-500 hover:bg-[#fafafa] hover:text-charcoal border border-charcoal"
+              >
+                See more
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="bg-beige py-48">
+      <div class="flex flex-col justify-center text-center">
+        <h2 class="text-center text-4xl lg:text-5xl 2xl:text-6xl text-charcoal">
+          You're In Good Hands
+        </h2>
+        <p class="text-charcoal py-6">
+          Some other stuff here lorem ipsum blah blah blah
+        </p>
+      </div>
+      <div class="flex flex-row">
+        <a
+          href="/contact"
+          class="bg-charcoal mx-auto tracking-widest rounded-lg my-6 px-12 py-6 text-[#fafafa] uppercase transition-colors duration-500 hover:bg-[#fafafa] hover:text-charcoal border border-charcoal"
+        >
+          Start a project
+        </a>
+      </div>
+    </div>
+
+    <div class="bg-charcoal uppercase text-[#fafafa] py-24 px-12">
+      <h1>Alyx Savage</h1>
+    </div>
+  </main>
+</Layout>
