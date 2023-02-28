@@ -1,0 +1,33 @@
+---
+import FadeIn from "../FadeIn.astro";
+import Section from "./Section.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  cta: string;
+}
+
+const { title, description, cta } = Astro.props as Props;
+---
+
+<Section>
+  <div class="flex flex-col justify-center text-center space-y-12 px-6">
+    <h2
+      class="text-center text-5xl lg:text-8xl 2xl:text-9xl text-charcoal uppercase max-w-screen-lg mx-auto"
+    >
+      {title}
+    </h2>
+    <p class="text-charcoal text-lg lg:text-2xl max-w-screen-lg mx-auto">
+      {description}
+    </p>
+    <div class="flex flex-row items-center justify-center">
+      <a
+        href="/contact"
+        class="bg-charcoal rounded-lg px-24 py-6 text-beige uppercase transition-colors duration-500 hover:bg-beige hover:text-charcoal border border-charcoal tracking-widest"
+      >
+        {cta}</a
+      >
+    </div>
+  </div>
+</Section>

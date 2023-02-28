@@ -9,6 +9,9 @@ module.exports = {
         white: '#fafafa',
         'regal-blue': '#c1b6a4',
       },
+      fontSize: {
+        '10xl': '12rem',
+      },
       fontFamily: {
         sans: ['"Gloock"', 'serif'],
       }

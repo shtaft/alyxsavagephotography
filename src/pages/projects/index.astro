@@ -2,6 +2,7 @@
 import FadeIn from "../../components/animation/FadeIn.astro";
 import Layout from "../../layouts/Layout.astro";
 import { sections } from "../../content";
+import CTA from "../../components/animation/sections/CTA.astro";
 ---
 
 <Layout title="Alyx Savage | Victoria & Vancouver Island Photography">
@@ -14,7 +15,9 @@ import { sections } from "../../content";
           <div
             class="max-w-md flex flex-col justify-center items-center text-center"
           >
-            <h1 class="text-5xl md:text-9xl text-beige">My Work</h1>
+            <h1 class="text-9xl md:text-10xl text-beige text-center">
+              My Work
+            </h1>
           </div>
         </div>
         <img
@@ -29,7 +32,10 @@ import { sections } from "../../content";
         sections.map((s) => (
           <div class="grid grid-cols-1 md:grid-cols-2 h-screen md:h-fit ">
             <FadeIn>
-              <img class="h-full max-h-[50vh] object-cover" src={s.img} />
+              <img
+                class="h-full w-full max-h-[50vh] object-cover"
+                src={s.img}
+              />
             </FadeIn>
             <FadeIn>
               <div class="flex flex-col justify-center items-center h-full p-12">
@@ -52,35 +58,14 @@ import { sections } from "../../content";
       }
     </div>
 
-    <div class="py-48">
-      <div class="flex flex-col justify-center text-center">
-        <FadeIn>
-          <h2
-            class="text-center text-4xl lg:text-5xl 2xl:text-7xl text-charcoal"
-          >
-            You're In Good Hands
-          </h2>
-        </FadeIn>
-        <FadeIn>
-          <p class="text-charcoal py-6 text-2xl max-w-screen-lg mx-auto">
-            As a proven professional, I'm passionate about creating beautiful,
-            timeless images that capture your most cherished memories. Whether
-            it's beautiful photos for your webiste, a wedding, or a special
-            event, I'll work with you to create a unique and stunning visual
-            experience.
-          </p>
-        </FadeIn>
-      </div>
-      <FadeIn>
-        <div class="flex flex-row items-center justify-center">
-          <a
-            href="/contact"
-            class="bg-charcoal rounded-lg my-24 px-24 py-6 text-beige uppercase transition-colors duration-500 hover:bg-beige hover:text-charcoal border border-charcoal tracking-widest"
-          >
-            Work With Me</a
-          >
-        </div>
-      </FadeIn>
-    </div>
+    <CTA
+      title="You're in good hands"
+      description={`As a proven professional, I'm passionate about creating beautiful,
+    timeless images that capture your most cherished memories. Whether
+    it's beautiful photos for your website, a wedding, or a special
+    event, I'll work with you to create a unique and stunning visual
+    experience.`}
+      cta="Get in touch"
+    />
   </main>
 </Layout>
