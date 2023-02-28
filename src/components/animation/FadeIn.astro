@@ -1,0 +1,27 @@
+<script type="module">
+  const callback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-fade-in");
+      }
+    });
+  };
+
+  const targets = document.querySelectorAll(`.show-on-scroll`);
+  const observer = new IntersectionObserver(callback, {});
+
+  targets.forEach(function (target) {
+    observer.observe(target);
+  });
+</script>
+<style>
+  .animate-fade-in {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+    -webkit-transition: opacity 1s ease-in;
+    visibility: visible;
+  }
+</style>
+<div class="opacity-0 show-on-scroll">
+  <slot />
+</div>
