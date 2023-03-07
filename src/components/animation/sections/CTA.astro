@@ -1,14 +1,12 @@
 ---
-import FadeIn from "../FadeIn.astro";
 import Section from "./Section.astro";
 
 export interface Props {
   title: string;
-  description: string;
   cta: string;
 }
 
-const { title, description, cta } = Astro.props as Props;
+const { title, cta } = Astro.props as Props;
 ---
 
 <Section>
@@ -19,12 +17,17 @@ const { title, description, cta } = Astro.props as Props;
       {title}
     </h2>
     <p class="text-charcoal text-lg lg:text-2xl max-w-screen-lg mx-auto">
-      {description}
+      I love to work with individuals and brands to create content that allows
+      them to be represented authentically. I value collaboration and connection
+      and know that photography can play an important role in presenting your
+      ideas.
+      <br /><br />
+      Let's work together to elevate your online presence.
     </p>
     <div class="flex flex-row items-center justify-center">
       <a
         href="/contact"
-        class="bg-charcoal rounded-lg px-24 py-6 text-beige uppercase transition-colors duration-500 hover:bg-beige hover:text-charcoal border border-charcoal tracking-widest"
+        class="bg-beige rounded-lg px-12 py-6 text-charcoal uppercase transition-colors duration-500 hover:bg-charcoal hover:text-beige border border-charcoal tracking-widest w-full max-w-screen-sm"
       >
         {cta}</a
       >

@@ -1,139 +1,186 @@
-const productShots = [
+interface PortfolioContent {
+  src: string;
+  category:
+    | "Ecommerce product listing"
+    | "Modeled product photography"
+    | "E-commerce product listing"
+    | "Prop styled product photography"
+    | "Couples photography";
+  type:
+    | "Skincare"
+    | "Jewelry"
+    | "Fashion / Jewelry"
+    | "Ceramics"
+    | "Clay subscription box"
+    | "Engagement";
+}
+export const portfolio: PortfolioContent[] = [
   {
-    title: "Violette Boutique",
-    images: [
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    ],
+    src: "/img/portfolio/33.jpg",
+    category: "E-commerce product listing",
+    type: "Jewelry",
   },
   {
-    title: "Violette Boutique",
-    images: [
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    ],
+    src: "/img/portfolio/6.jpg",
+    category: "Modeled product photography",
+    type: "Skincare",
   },
-];
+  {
+    src: "/img/portfolio/18.jpg",
+    category: "Prop styled product photography",
+    type: "Ceramics",
+  },
+  {
+    src: "/img/portfolio/15.jpg",
+    category: "Couples photography",
+    type: "Engagement",
+  },
+  {
+    src: "/img/portfolio/14.jpg",
+    category: "Modeled product photography",
+    type: "Skincare",
+  },
+  {
+    src: "/img/portfolio/32.jpg",
+    category: "E-commerce product listing",
+    type: "Ceramics",
+  },
+  {
+    src: "/img/portfolio/2.jpg",
+    category: "Modeled product photography",
+    type: "Skincare",
+  },
+  {
+    src: "/img/portfolio/3.jpg",
+    category: "Modeled product photography",
+    type: "Skincare",
+  },
 
-const styledPhotography = [
   {
-    title: "Violette Boutique",
-    images: [
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    ],
+    src: "/img/portfolio/1.test.jpg",
+    category: "Ecommerce product listing",
+    type: "Skincare",
   },
   {
-    title: "Violette Boutique",
-    images: [
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    ],
+    src: "/img/portfolio/4.jpg",
+    category: "Modeled product photography",
+    type: "Skincare",
   },
-];
+  {
+    src: "/img/portfolio/5.jpg",
+    category: "Modeled product photography",
+    type: "Skincare",
+  },
 
-const modelPhotography = [
   {
-    title: "Violette Boutique",
-    images: [
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    ],
+    src: "/img/portfolio/7.jpg",
+    category: "Modeled product photography",
+    type: "Jewelry",
   },
   {
-    title: "Violette Boutique",
-    images: [
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    ],
+    src: "/img/portfolio/8.jpg",
+    category: "Modeled product photography",
+    type: "Fashion / Jewelry",
   },
-];
+  {
+    src: "/img/portfolio/9.jpg",
+    category: "Modeled product photography",
+    type: "Jewelry",
+  },
+  {
+    src: "/img/portfolio/10.jpg",
+    category: "Prop styled product photography",
+    type: "Jewelry",
+  },
+  {
+    src: "/img/portfolio/12.jpg",
+    category: "E-commerce product listing",
+    type: "Ceramics",
+  },
+  {
+    src: "/img/portfolio/13.jpg",
+    category: "E-commerce product listing",
+    type: "Jewelry",
+  },
+  {
+    src: "/img/portfolio/16.jpg",
+    category: "Modeled product photography",
+    type: "Clay subscription box",
+  },
+  {
+    src: "/img/portfolio/17.jpg",
+    category: "E-commerce product listing",
+    type: "Jewelry",
+  },
 
-const couplePhotography = [
   {
-    title: "Violette Boutique",
-    images: [
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    ],
+    src: "/img/portfolio/19.jpg",
+    category: "Modeled product photography",
+    type: "Jewelry",
   },
   {
-    title: "Violette Boutique",
-    images: [
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-      "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    ],
-  },
-];
-
-export const sections = [
-  {
-    id: "product-shots",
-    img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    header: "Product Shots",
-    tags: ["Ecommerce", "Product Photography", "Product Shots"],
-    content: `
-    Whether you’re a small business looking to expand your ecommerce presence or a large company looking to revamp your website, I can help you create the perfect product
-    photos. My style combines a modern aesthetic with a classic, timeless touch that will make your product look like it belongs with the trendiest of brands.
-    I understand that product photography is an art form that requires a delicate balance of creativity and technical skill. That's why I work closely with my clients to ensure
-    that the end product is exactly what they're looking for.`,
-    details: productShots,
+    src: "/img/portfolio/20.jpg",
+    category: "Prop styled product photography",
+    type: "Jewelry",
   },
   {
-    id: "styled-photography",
-    img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    header: "Styled Photography",
-    tags: ["Ecommerce", "Branding", "Viral Content", "Social Media"],
-    content: `We will bring your products to life with captivating visuals that are sure to stand out amongst the competition. From still life shots to lifestyle images, we give your products the attention they deserve.
-    We strive to create beautiful images that capture the essence of your brand and showcase your products in a way that will draw in your customers. We understand the importance of getting the perfect shot and we won't settle for anything less than perfection.
-    With years of experience in the industry, we have the knowledge and expertise to create stunning imagery that will make your products shine.
-    `,
-    details: styledPhotography,
+    src: "/img/portfolio/21.jpg",
+    category: "Prop styled product photography",
+    type: "Jewelry",
   },
   {
-    id: "model-photography",
-    img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    header: "Model Photography",
-    tags: ["Ecommerce", "Branding", "Viral Content", "Social Media"],
-    content: `
-    We offer a range of services, from fashion and beauty to lifestyle and portraiture. We work with professional models and photographers to create stunning visuals that capture the essence of your brand or project. My goal is to create beautiful images that are unique and sophisticated, yet still have a modern, trendy edge.
-    We customize each project to fit your needs and budget, and we guarantee a high-quality product and a superior customer experience. We understand the importance of your time and money, and we strive to provide a smooth and enjoyable experience from start to finish. Contact us today to start your journey.`,
-    details: modelPhotography,
+    src: "/img/portfolio/22.jpg",
+    category: "Modeled product photography",
+    type: "Skincare",
   },
   {
-    id: "couple-photography",
-    img: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-    header: "Couple Photography",
-    tags: ["Engagements", "Weddings", "Anniversaries"],
-    content: `
-    My passion is capturing the beautiful moments of your special day and creating memories that will last a lifetime.
-    We understand the importance of your day and the memories that will come with it, and we are dedicated to making sure that your photos are truly unique and capture the best of your special occasion. We strive to make your experience as stress-free and enjoyable as possible, so you can focus on enjoying your special day and leave the rest to us!
-    My style is modern and trendy, yet still timeless and elegant. We pride Myselves on My attention to detail and My ability to capture the emotion and beauty of your special moment. With years of experience, we are confident that you will love the results.
-    `,
-    details: couplePhotography,
+    src: "/img/portfolio/23.jpg",
+    category: "Modeled product photography",
+    type: "Skincare",
+  },
+  {
+    src: "/img/portfolio/24.jpg",
+    category: "Modeled product photography",
+    type: "Jewelry",
+  },
+  {
+    src: "/img/portfolio/25.jpg",
+    category: "Modeled product photography",
+    type: "Jewelry",
+  },
+  {
+    src: "/img/portfolio/26.jpg",
+    category: "Modeled product photography",
+    type: "Jewelry / Branding / Fashion",
+  },
+  {
+    src: "/img/portfolio/27.jpg",
+    category: "Modeled product photography",
+    type: "Jewelry",
+  },
+  {
+    src: "/img/portfolio/28.jpg",
+    category: "Modeled product photography",
+    type: "Jewelry",
+  },
+  {
+    src: "/img/portfolio/29.jpg",
+    category: "E-commerce product listing",
+    type: "Ceramics",
+  },
+  {
+    src: "/img/portfolio/30.jpg",
+    category: "E-commerce product listing",
+    type: "Ceramics",
+  },
+  {
+    src: "/img/portfolio/31.jpg",
+    category: "E-commerce product listing",
+    type: "Ceramics",
+  },
+  {
+    src: "/img/portfolio/34.jpg",
+    category: "Modeled product photography",
+    type: "Skincare",
   },
 ];

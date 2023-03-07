@@ -1,76 +1,41 @@
 ---
 import FadeIn from "../components/animation/FadeIn.astro";
 import Layout from "../layouts/Layout.astro";
-import { sections } from "../content";
 import CTA from "../components/animation/sections/CTA.astro";
+import HomePhotos from "../components/HomePhotos.astro";
 ---
 
 <Layout title="Alyx Savage | Victoria & Vancouver Island Photography">
   <main>
     <FadeIn>
       <div
-        class="flex flex-col justify-center items-center h-screen uppercase tracking-widest space-y-24 px-6"
+        class="flex flex-col justify-center items-center h-screen uppercase tracking-widest space-y-12 px-6"
       >
         <div
           class="flex flex-col justify-center items-center text-center space-y-6"
         >
           <h1
-            class="text-7xl md:text-8xl lg:text-10xl text-charcoal break-normal"
+            class="text-6xl md:text-7xl lg:text-8xl text-charcoal break-normal"
           >
             Alyx Savage
           </h1>
           <h1
-            class="text-4xl md:text-6xl lg:text-7xl text-charcoal break-normal"
+            class="text-4xl md:text-5xl lg:text-6xl text-charcoal break-normal"
           >
             Photography
           </h1>
         </div>
         <a
           href="/contact"
-          class="bg-charcoal rounded-lg w-full max-w-sm py-6 text-center text-beige uppercase transition-colors duration-500 hover:bg-beige hover:text-charcoal border border-charcoal tracking-widest"
+          class="rounded-lg w-full max-w-sm py-6 text-center text-charcoal uppercase transition-colors duration-500 hover:bg-charcoal hover:text-beige border border-charcoal tracking-widest"
         >
           Get In Touch</a
         >
       </div>
     </FadeIn>
 
-    <div class="bg-[#fafafa]">
-      {
-        sections.map((s) => (
-          <div class="grid grid-cols-1 md:grid-cols-2 h-screen md:h-fit ">
-            <FadeIn>
-              <img
-                class="h-full w-full max-h-[70vh] object-cover"
-                src={s.img}
-              />
-            </FadeIn>
-            <div class="flex flex-col grow justify-center items-center h-full p-12">
-              <h2 class="text-center text-4xl lg:text-5xl 2xl:text-6xl text-charcoal uppercase">
-                {s.header}
-              </h2>
-              <div class="text-center flex-wrap my-6 space-x-3">
-                {s.tags.join(" · ")}
-              </div>
-              <a
-                href={`/projects/${s.id}`}
-                class="bg-charcoal tracking-widest rounded-lg px-24 text-center py-6 text-[#fafafa] uppercase transition-colors duration-500 hover:bg-[#fafafa] hover:text-charcoal border border-charcoal"
-              >
-                See more
-              </a>
-            </div>
-          </div>
-        ))
-      }
-    </div>
+    <HomePhotos />
 
-    <CTA
-      title="You're in good hands"
-      description={`As a proven professional, I'm passionate about creating beautiful,
-      timeless images that capture your most cherished memories. Whether
-      it's beautiful photos for your website, a wedding, or a special
-      event, I'll work with you to create a unique and stunning visual
-      experience.`}
-      cta="Get in touch"
-    />
+    <CTA title="Best Face Forward" cta="Reach Out" />
   </main>
 </Layout>

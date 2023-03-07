@@ -5,13 +5,24 @@ import Layout from "../layouts/Layout.astro";
 
 <Layout title="Contact | Alyx Savage Photography">
   <main>
-    <div class="my-48">
+    <div class="mb-48 mt-48 md:mt-56">
       <FadeIn>
-        <div class="flex flex-col items-center uppercase tracking-widest my-24">
-          <h1 class="text-6xl md:text-8xl">Contact Me</h1>
+        <div
+          class="flex flex-col items-center text-center uppercase tracking-widest mb-24 max-w-screen-md mx-auto"
+        >
+          <h1 class="text-6xl md:text-8xl">Get In Touch</h1>
+          <p class="text-md md:text-lg mt-12 px-6">
+            Reach out here for more information about my services.
+          </p>
+          <p class="text-md md:text-lg px-6">
+            I look forward to creating together!
+          </p>
         </div>
 
-        <form class="max-w-screen-sm mx-auto space-y-6 px-3">
+        <form
+          class="max-w-screen-sm mx-auto space-y-6 px-3"
+          action="https://contact.alyxsavagephotography.com"
+        >
           <div class="space-y-2 text-lg">
             <label for="name">Name</label>
             <input
@@ -19,6 +30,15 @@ import Layout from "../layouts/Layout.astro";
               type="text"
               name="name"
               id="name"
+            />
+          </div>
+          <div class="space-y-2 text-lg">
+            <label for="business">Business</label>
+            <input
+              class="w-full py-3 px-3 outline-beige tracking-widest bg-beige border border-charcoal rounded-lg"
+              type="text"
+              name="business"
+              id="business"
             />
           </div>
           <div class="space-y-2 text-lg">
@@ -42,7 +62,7 @@ import Layout from "../layouts/Layout.astro";
           <div class="flex flex-col items-end">
             <button
               type="submit"
-              class="bg-charcoal tracking-widest rounded-lg my-6 px-24 text-center py-6 text-beige uppercase transition-colors duration-500 hover:bg-beige hover:text-charcoal border border-charcoal outline-beige"
+              class="bg-beige tracking-widest rounded-lg my-6 px-24 text-center py-6 text-charcoal uppercase transition-colors duration-500 hover:bg-charcoal hover:text-beige border border-charcoal outline-beige"
             >
               Submit
             </button>

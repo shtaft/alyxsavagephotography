@@ -1,16 +1,18 @@
 ---
 import HoverLink from "../components/animation/HoverLink.astro";
+import { ldSchema } from "../content/ld-schema";
 
 export interface Props {
   title?: string;
+  inverted?: boolean;
 }
 
-const { title } = Astro.props;
+const { title, inverted } = Astro.props;
 
 const navContent = [
   {
-    title: "Projects",
-    href: "/projects",
+    title: "Portfolio",
+    href: "/portfolio",
   },
   {
     title: "About",
@@ -23,50 +25,112 @@ const navContent = [
 ];
 ---
 
-<!DOCTYPE html>
+<script type="module">
+  const callback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("animate-fade-in");
+      }
+    });
+  };
+
+  const targets = document.querySelectorAll(`.show-on-scroll`);
+  const observer = new IntersectionObserver(callback, {});
+
+  targets.forEach(function (target) {
+    observer.observe(target);
+  });
+</script>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="canonical" href="https://alyxsavagephotography.com/" />
+    <meta
+      name="description"
+      content="I am a Victoria BC based Photographer, focusing on e-commerce. Let's work together to elevate your online presence."
+    />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta
+      property="og:description"
+      content="I am a Victoria BC based Photographer, focusing on e-commerce. Let's work together to elevate your online presence."
+    />
+    <meta property="og:url" content="https://alyxsavagephotography.com/" />
+    <meta property="og:site_name" content="Alyx Savage Photography" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:description"
+      content="I am a Victoria BC based Photographer, focusing on e-commerce. Let's work together to elevate your online presence."
+    />
+    <meta name="twitter:title" content={title} />
+
+    <script type="application/ld+json" set:html={ldSchema}></script>
+
     <title>{title}</title>
   </head>
-  <body class="bg-beige text-charcoal">
+  <body class="bg-beige text-charcoal scroll-smooth">
     <nav class="z-10 absolute top-0 w-screen px-3 md:px-6">
-      <div
-        class="max-w-screen-2xl mx-auto py-6 flex flex-row justify-between items-center"
-      >
-        <a href="/" class="uppercase text-3xl outline-beige">A.S.</a>
-        <div class="flex flex-row justify-end">
-          {
-            navContent.map(({ title, href }) => (
-              <div class="uppercase text-md lg:text-lg">
-                <HoverLink href={href}>{title}</HoverLink>
-              </div>
-            ))
-          }
+      <div class={inverted ? "text-beige" : ""}>
+        <div
+          class="max-w-screen-2xl mx-auto py-6 flex flex-row justify-between items-center"
+        >
+          <a href="/" class="outline-beige hidden sm:block">
+            {
+              inverted ? (
+                <img class="w-56" src="/desktop-logo-beige.png" />
+              ) : (
+                <img class="w-56" src="/desktop-logo-charcoal.png" />
+              )
+            }
+          </a>
+          <a href="/" class="outline-beige block sm:hidden">
+            <img class="w-12" src="/mobile-logo-charcoal.png" />
+          </a>
+          <div class="flex flex-row grow justify-end">
+            {
+              navContent.map(({ title, href }) => (
+                <div class="uppercase text-md lg:text-lg">
+                  <HoverLink href={href}>{title}</HoverLink>
+                </div>
+              ))
+            }
+          </div>
         </div>
       </div>
     </nav>
-    <div class="min-h-screen mt-24">
+    <div class="min-h-screen">
       <slot />
     </div>
-
     <div class="bg-charcoal text-beige pt-24 pb-12 px-12">
       <div
         class="grid grid-cols-1 md:grid-cols-3 2xl:grid-cols-[400px_1fr_1fr] space-y-12 md:space-y-0"
       >
         <span
-          class="text-4xl uppercase flex justify-center md:justify-start md:border-r md:border-r-beige"
-          >A.S.</span
+          class="uppercase flex justify-center md:justify-start md:border-r md:border-r-beige"
         >
-        <div class="flex flex-col items-center md:items-start md:mx-12">
+          <img class="w-72 p-6" src="/desktop-logo-beige.png" />
+        </span>
+        <div
+          class="flex flex-col items-center justify-center md:items-start md:mx-12"
+        >
           {
-            navContent.map(({ title, href }) => (
+            [
+              ...navContent,
+              {
+                title: "Instagram",
+                href: "https://www.instagram.com/alyxsavagephotography/",
+                target: "_blank",
+              },
+            ].map(({ title, href, target }) => (
               <a
                 class="uppercase text-sm md:text-md my-1 hover:text-white outline-beige transition-colors tracking-widest"
                 href={href}
+                target={target}
               >
                 {title}
               </a>
@@ -76,7 +140,7 @@ const navContent = [
         <div class="flex flex-col items-end justify-center">
           <a
             href="/contact"
-            class="bg-beige outline-beige rounded-lg py-6 w-full lg:max-w-sm text-center text-charcoal uppercase transition-colors duration-500 hover:bg-charcoal hover:text-beige border border-beige tracking-widest"
+            class="bg-charcoal outline-beige rounded-lg py-6 w-full lg:max-w-sm text-center text-beige uppercase transition-colors duration-500 hover:bg-beige hover:text-charcoal border border-beige tracking-widest"
           >
             Work With Me</a
           >
@@ -92,4 +156,16 @@ const navContent = [
 </html>
 <style is:global>
   @import url("https://fonts.googleapis.com/css2?family=Gloock&family=Libre+Baskerville&display=swap");
+
+  .animate-fade-in {
+    opacity: 1;
+    transition: opacity 1s ease-in;
+    -webkit-transition: opacity 1s ease-in;
+  }
+
+  .animate-fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in;
+    -webkit-transition: opacity 1s ease-in;
+  }
 </style>

@@ -1,51 +1,39 @@
 ---
 import FadeIn from "../components/animation/FadeIn.astro";
-import CTA from "../components/animation/sections/CTA.astro";
-import Section from "../components/animation/sections/Section.astro";
 import Layout from "../layouts/Layout.astro";
+
+const about1 =
+  "Hi, I'm Alyx! I'm a Victoria, BC Canada based photographer with a focus on product and branding imagery for businesses.";
+const about2 =
+  "I love to collaborate and share my ideas to create content that aligns with a brand’s ethos. I believe that strong imagery can allow brands to communicate their ideas visually with their community in a way that inspires. Whether it be crisp product photography for online product listings, creative prop styled shots for social media, or model shots for your next marketing campaign, I am passionate about creating professional imagery that can set your business up to succeed online.";
 ---
 
 <Layout title="Alyx Savage | Victoria & Vancouver Island Photography">
   <main>
     <FadeIn>
-      <div
-        class="flex flex-col justify-center items-center h-[100vh] uppercase tracking-widest relative overflow-hidden"
-      >
-        <div class="absolute z-10">
-          <div
-            class="max-w-md flex flex-col justify-center items-center text-center"
-          >
-            <h1 class="text-9xl md:text-10xl text-beige text-center">
-              About Me
-            </h1>
+      <div class="mt-24 px-12 md:px-12 py-24 mx-auto w-fit">
+        <h1 class="text-9xl md:text-10xl z-10 relative">About</h1>
+        <h1 class="text-9xl md:text-10xl z-10 relative">Me</h1>
+        <div class="max-w-screen-lg space-y-12 z-0 lg:mt-[-350px]">
+          <img
+            class="h-[70vh] object-contain lg:float-right md:mx-6"
+            src="/img/about.jpg"
+          />
+          <div>
+            <p class="text-lg lg:text-2xl pt-12 lg:pt-[500px]">{about1}</p>
+            <p class="text-lg lg:text-2xl mt-6">{about2}</p>
+
+            <div class="py-24">
+              <a
+                href="/contact"
+                class="bg-beige rounded-lg px-12 py-6 text-charcoal uppercase transition-colors duration-500 hover:bg-charcoal hover:text-beige border border-charcoal tracking-widest w-full max-w-screen-sm"
+              >
+                Get in touch</a
+              >
+            </div>
           </div>
         </div>
-        <img
-          class="brightness-50"
-          src="https://images.unsplash.com/photo-1527011046414-4781f1f94f8c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"
-        />
       </div>
     </FadeIn>
-
-    <Section>
-      <div
-        class="flex flex-col justify-center items-center text-charcoal space-y-12"
-      >
-        <h2 class="text-center text-5xl lg:text-8xl 2xl:text-9xl">
-          Hi. I'm Alyx.
-        </h2>
-        <p class="text-lg lg:text-2xl">Hi, my name is Alyx.</p>
-      </div>
-    </Section>
-
-    <CTA
-      title="You're in good hands"
-      description={`As a proven professional, I'm passionate about creating beautiful,
-    timeless images that capture your most cherished memories. Whether
-    it's beautiful photos for your website, a wedding, or a special
-    event, I'll work with you to create a unique and stunning visual
-    experience.`}
-      cta="Get in touch"
-    />
   </main>
 </Layout>

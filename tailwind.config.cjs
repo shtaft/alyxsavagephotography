@@ -10,7 +10,7 @@ module.exports = {
         'regal-blue': '#c1b6a4',
       },
       fontSize: {
-        '10xl': '12rem',
+        '10xl': '14rem',
       },
       fontFamily: {
         sans: ['"Gloock"', 'serif'],

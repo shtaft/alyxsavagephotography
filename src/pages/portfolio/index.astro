@@ -1,0 +1,38 @@
+---
+import FadeIn from "../../components/animation/FadeIn.astro";
+import Layout from "../../layouts/Layout.astro";
+import Portfolio from "../../components/Portfolio";
+---
+
+<Layout
+  title="Alyx Savage | Victoria & Vancouver Island Photography"
+  inverted={true}
+>
+  <main>
+    <FadeIn>
+      <div
+        class="flex flex-col justify-center items-center h-[100vh] uppercase tracking-widest relative overflow-hidden"
+      >
+        <div class="absolute z-10">
+          <div
+            class="max-w-md flex flex-col justify-center items-center text-center"
+          >
+            <h1
+              class="text-8xl md:text-9xl lg:text-10xl text-beige text-center"
+            >
+              My Work
+            </h1>
+          </div>
+        </div>
+        <img
+          class="brightness-50 h-screen w-screen object-cover"
+          src="/img/my-work.jpg"
+        />
+      </div>
+    </FadeIn>
+
+    <div class="py-48">
+      <Portfolio client:load />
+    </div>
+  </main>
+</Layout>

@@ -1,0 +1,6 @@
+name = "contact-form"
+main = "src/index.ts"
+compatibility_date = "2023-03-07"
+usage_model = "bundled"
+env = { }
+route = { pattern = "contact.alyxsavagephotography.com", zone_name = "alyxsavagephotography.com", custom_domain = true }

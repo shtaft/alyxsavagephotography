@@ -1,0 +1,41 @@
+---
+import FadeIn from "./FadeIn.astro";
+
+const photos = [
+  { src: "/img/home-1.jpg", alt: "Photo 1" },
+  { src: "/img/home-2.jpg", alt: "Photo 2" },
+  { src: "/img/home-3.jpg", alt: "Photo 3" },
+  { src: "/img/home-4.jpg", alt: "Photo 4" },
+];
+---
+
+<style>
+  .photo {
+    object-fit: contain;
+    width: 70%;
+  }
+  .photo:nth-child(2n) {
+    margin-top: 60%;
+  }
+  @media (max-width: 500px) {
+    .photo {
+      width: 90%;
+      margin-top: 30%;
+    }
+    .photo:nth-child(2n) {
+      margin-top: 30%;
+    }
+  }
+</style>
+
+<div class="grid grid-cols-1 md:grid-cols-2 px-6">
+  {
+    photos.map((photo) => (
+      <img
+        class="photo mx-auto drop-shadow-2xl"
+        src={photo.src}
+        alt={photo.alt}
+      />
+    ))
+  }
+</div>
