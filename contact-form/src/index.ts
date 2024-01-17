@@ -8,7 +8,7 @@ export default {
     if (!email) {
       return new Response("Email is required", { status: 400 });
     }
-
+    console.log("Sending mail", name, email);
     const emailRequest = new Request(
       "https://api.mailchannels.net/tx/v1/send",
       {
