@@ -19,9 +19,7 @@ export default {
         body: JSON.stringify({
           personalizations: [
             {
-              to: [
-                { email: "alyx.l.gallacher@gmail.com", name: "Alyx Savage" },
-              ],
+              to: [{ email: "taft.simon@gmail.com", name: "Alyx Savage" }],
             },
           ],
           from: {
@@ -56,15 +54,14 @@ export default {
       }
     );
 
-    await fetch(emailRequest);
-    // if (!emailResponse.ok) {
-    //   const body = await emailResponse.text();
-    //   console.log(emailResponse);
-    //   console.log(body);
-    //   return new Response("Email failed to send " + body, {
-    //     status: emailResponse.status,
-    //   });
-    // }
+    const emailResponse = await fetch(emailRequest);
+
+    if (!emailResponse.ok) {
+      console.error("Error sending email");
+      const body = await emailResponse.text();
+      console.log(JSON.stringify(emailResponse));
+      console.log(JSON.stringify(body));
+    }
     return new Response(null, {
       status: 302,
       headers: {
